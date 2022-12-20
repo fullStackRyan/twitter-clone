@@ -13,11 +13,13 @@ function Widgets() {
           placeholder="Search Twitter"
         />
       </div>
-      <TwitterTimelineEmbed
-        sourceType="profile"
-        screenName="elonmusk"
-        options={{ height: 1000 }}
-      />
+      <div className="mt-3 scrollbar-hide">
+        <TwitterTimelineEmbed
+          sourceType="profile"
+          screenName="elonmusk"
+          options={{ height: 1000 }}
+        />
+      </div>
     </div>
   );
 }

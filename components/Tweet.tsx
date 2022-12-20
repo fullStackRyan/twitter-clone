@@ -44,10 +44,12 @@ function Tweet({ tweet }: Props) {
       profileImg: session?.user?.image || "https://links.papareact.com/gll",
     };
 
-    const result = await fetch(`/api/addComment`, {
+    const result = await fetch(`/api/addComments`, {
       body: JSON.stringify(comment),
       method: "POST",
     });
+
+    console.log("comment", comment);
 
     console.log("WOOHOO we made it", result);
     toast.success("Comment Posted!", {
@@ -135,7 +137,7 @@ function Tweet({ tweet }: Props) {
       )}
 
       {comments?.length > 0 && (
-        <div className="my-2 mt-5 max-h-44 space-y-5 overflow-y-scroll border-t border-gray-100 p-5">
+        <div className="my-2 mt-5 max-h-44 space-y-5 overflow-y-scroll border-t border-gray-100 p-5 scrollbar-hide">
           {comments.map((comment) => (
             <div key={comment._id} className="relative flex space-x-2">
               <hr className="absolute left-5 top-10 h-8 border-x border-twitter/30" />
