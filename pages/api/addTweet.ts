@@ -39,8 +39,6 @@ export default async function handler(
     method: "POST",
   });
 
-  await console.log("tweet", result);
-
   const json = await result.json();
 
   res.status(200).json({ message: "Added" });
